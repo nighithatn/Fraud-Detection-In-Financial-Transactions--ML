@@ -66,7 +66,7 @@ The system predicts the probability of a financial transaction being fraudulent 
 FraudShield-AI-Flask/
 │
 ├── app.py
-├── fraud_model.json
+├── fraud_detection.ipynb
 ├── requirements.txt
 │
 ├── templates/
