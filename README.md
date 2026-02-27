@@ -70,7 +70,7 @@ FraudShield-AI-Flask/
 ├── requirements.txt
 │
 ├── templates/
-│     ├── login.html
+│     ├── index.html
 │     └── dashboard.html
 │
 └── screenshots/
