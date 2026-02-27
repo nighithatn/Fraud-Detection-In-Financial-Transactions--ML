@@ -1,95 +1,135 @@
-# 💳 FraudShield AI – Intelligent Fraud Detection Dashboard
+# 💳 FraudShield AI – End-to-End Fraud Detection System
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-Web%20App-black)
 ![XGBoost](https://img.shields.io/badge/XGBoost-ML-orange)
+![PowerBI](https://img.shields.io/badge/PowerBI-Dashboard-yellow)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
 
 ---
 
 ## 🚀 Project Overview
 
-**FraudShield AI** is a machine learning-powered fraud detection web application built using:
+**FraudShield AI** is an end-to-end fraud detection system that integrates:
 
-- 🧠 XGBoost (Trained ML Model)
-- 🌐 Flask (Backend Web Framework)
-- 🎨 Premium FinTech UI (Glassmorphism Design)
-- 📊 Real-time Risk Scoring Dashboard
+- 🧠 Machine Learning (XGBoost)
+- 🌐 Flask Web Application
+- 🎨 Premium FinTech Dashboard UI
+- 📊 Power BI Business Intelligence Dashboard
 
-The system predicts the probability of a financial transaction being fraudulent and provides:
+The system predicts fraudulent financial transactions and provides:
 
-- Fraud probability (%)
-- Risk classification (Safe / Medium / High Risk)
-- Expected financial loss estimation
-- Currency selection (₹ INR / $ USD)
-- Interactive circular risk meter
-
----
-
-## 🖥️ Dashboard Preview
-
-### 🔐 Login Page
-![Login Screenshot](screenshots/login.png)
-
-### 📊 Fraud Detection Dashboard
-![Dashboard Screenshot](screenshots/dashboard.png)
+- Fraud Probability Score (%)
+- Risk Classification (Safe / Medium / High)
+- Expected Financial Loss Estimation
+- Multi-Currency Support (₹ INR / $ USD)
+- Business Insights via Power BI
 
 ---
 
-## 🧠 Machine Learning Model
+# 🧠 Machine Learning Model
 
 - Algorithm: **XGBoost Classifier**
-- Saved Model Format: `fraud_model.json`
-- Feature Engineering includes:
-  - Balance differences
-  - Zero balance indicators
-  - Transaction ratio features
-  - One-hot encoded transaction types
+- Model Format: `fraud_model.json`
+- Feature Engineering:
+  - Balance Difference Features
+  - Zero Balance Indicators
+  - Transaction Ratio Features
+  - One-hot Encoded Transaction Types
 
 ---
 
-## ⚙️ Tech Stack
+# 🌐 Flask Web Application
 
-| Component | Technology |
-|-----------|------------|
-| Backend | Flask |
-| ML Model | XGBoost |
-| Data Processing | Pandas |
-| Frontend | HTML + CSS (Custom UI) |
-| Deployment Ready | Yes |
+## 🔐 Login Authentication
+- Session-based login
+- Secure route protection
+
+## 📊 Risk Assessment Dashboard
+- Circular dynamic risk meter
+- Real-time fraud probability
+- Expected financial loss calculation
+- Currency selector (INR / USD)
+- Premium glassmorphism UI design
 
 ---
 
-## 📂 Project Structure
+# 📈 Power BI Business Intelligence Dashboard
+
+The Power BI dashboard provides advanced analytical insights into fraud patterns and financial risk exposure.
+
+### 📊 Dashboard Page 1 – Fraud Overview
+
+![Power BI Dashboard 1](screenshots/powerbi_dashboard_1.png)
+
+---
+
+### 📊 Dashboard Page 2 – Transaction Analysis
+
+![Power BI Dashboard 2](screenshots/powerbi_dashboard_2.png)
+
+---
+
+## 📌 Power BI Insights Included
+
+✔ Fraud vs Non-Fraud Distribution  
+✔ Transaction Type Comparison  
+✔ Fraud Percentage KPI  
+✔ Total Expected Financial Loss  
+✔ Risk Trend Analysis  
+✔ Interactive Filters & Slicers  
+
+Power BI file included:
 
 ```
-FraudShield-AI-Flask/
+Fraud_Analytics_Dashboard.pbix
+```
+
+# ⚙️ Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| ML Model | XGBoost |
+| Backend | Flask |
+| Data Processing | Pandas |
+| Frontend | HTML + CSS |
+| BI Dashboard | Power BI |
+| Programming | Python |
+
+---
+
+# 📂 Project Structure
+
+```
+FraudShield-AI-End-to-End/
 │
 ├── app.py
 ├── fraud_detection.ipynb
 ├── requirements.txt
+├── Fraud_Analytics_Dashboard.pbix
 │
 ├── templates/
 │     ├── index.html
 │     └── dashboard.html
 │
-└── screenshots/
-      ├── login.png
-      └── dashboard.png
+├── screenshots/
+│     ├── login.png
+│     ├── dashboard.png
+│     └── powerbi_dashboard.png
 ```
 
 ---
 
-## 🔧 Installation & Setup
+# 🔧 Installation & Setup
 
-### 1️⃣ Clone Repository
+## 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/your-username/FraudShield-AI-Flask.git
-cd FraudShield-AI-Flask
+git clone https://github.com/your-username/FraudShield-AI-End-to-End.git
+cd FraudShield-AI-End-to-End
 ```
 
-### 2️⃣ Create Virtual Environment
+## 2️⃣ Create Virtual Environment
 
 ```bash
 python -m venv fraud_env
@@ -107,25 +147,25 @@ Mac/Linux:
 source fraud_env/bin/activate
 ```
 
-### 3️⃣ Install Dependencies
+## 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-If requirements file not available:
+If requirements file missing:
 
 ```bash
 pip install flask pandas xgboost
 ```
 
-### 4️⃣ Run Application
+## 4️⃣ Run Flask App
 
 ```bash
 python app.py
 ```
 
-Open browser:
+Open in browser:
 
 ```
 http://127.0.0.1:5000
@@ -133,7 +173,7 @@ http://127.0.0.1:5000
 
 ---
 
-## 🔐 Demo Login Credentials
+# 🔐 Demo Credentials
 
 ```
 Username: admin
@@ -142,19 +182,7 @@ Password: 1234
 
 ---
 
-## 🎯 Features
-
-✔ AI-powered fraud probability scoring  
-✔ Premium FinTech dashboard design  
-✔ Circular dynamic risk meter  
-✔ Currency selection (INR / USD)  
-✔ Expected loss estimation  
-✔ Session-based login authentication  
-✔ Clean modular Flask structure  
-
----
-
-## 📊 Risk Classification Logic
+# 📊 Risk Classification Logic
 
 | Probability | Classification |
 |-------------|---------------|
@@ -164,25 +192,34 @@ Password: 1234
 
 ---
 
-## 🚀 Future Improvements
+# 📈 Power BI Insights Included
 
-- Real-time currency exchange API
-- Transaction history database (SQL)
-- User authentication with hashing
-- Admin analytics dashboard
-- Cloud deployment (Render / Heroku)
+✔ Fraud percentage KPI  
+✔ Total transaction volume  
+✔ Fraud trend analysis  
+✔ Transaction type comparison  
+✔ Expected loss summary  
+✔ Interactive slicers & filters  
+
+---
+
+# 🚀 Future Enhancements
+
+- Database integration (MySQL / PostgreSQL)
+- Live exchange rate API
 - REST API version
+- Cloud deployment (Render / Azure)
+- Role-based authentication
+- Real-time streaming fraud detection
 
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
-Developed by **Nighitha TN**   
-
----
-
-## ⭐ If you like this project
-
-Give it a ⭐ on GitHub and connect with me!
+Developed by **Nighitha T N**    
 
 ---
+
+# ⭐ If You Like This Project
+
+Please give it a ⭐ and connect with me!
