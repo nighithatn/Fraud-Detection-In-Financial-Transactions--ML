@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI-Powered Fraud Detection System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            width: 450px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: none;
+            background: rgba(255,255,255,0.85);
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg,#00c853,#00e676);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 5px 20px rgba(0,255,100,0.4);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .meter {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(#00e676 {{ probability or 0 }}%, #2e2e2e 0%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .meter span {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .status {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .safe { color: #00e676; }
+        .medium { color: orange; }
+        .high { color: red; }
+
+        .loss {
+            margin-top: 10px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .header {
+    padding: 30px 60px;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #e8f1f5;
+    text-shadow: 0 0 15px rgba(0, 255, 150, 0.15);
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="header">💳 AI-Powered Fraud Detection System</div>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="card">
+        <h2>💼 AI Fraud Intelligence</h2>
+
+        <form method="POST">
+
+            <!-- Currency Selector -->
+            <select name="currency">
+                <option value="INR" {% if currency == "INR" %}selected{% endif %}>₹ Rupees</option>
+                <option value="USD" {% if currency == "USD" %}selected{% endif %}>$ Dollar</option>
+            </select>
+
+            <input type="number" step="any" name="amount" placeholder="Transaction Amount" required>
+            <input type="number" step="any" name="oldbalanceOrg" placeholder="Old Balance (Origin)" required>
+            <input type="number" step="any" name="newbalanceOrig" placeholder="New Balance (Origin)" required>
+            <input type="number" step="any" name="oldbalanceDest" placeholder="Old Balance (Destination)" required>
+            <input type="number" step="any" name="newbalanceDest" placeholder="New Balance (Destination)" required>
+
+            <select name="type">
+                <option value="CASH_OUT">CASH_OUT</option>
+                <option value="TRANSFER">TRANSFER</option>
+                <option value="PAYMENT">PAYMENT</option>
+                <option value="DEBIT">DEBIT</option>
+            </select>
+
+            <button>🚀 Analyze Transaction</button>
+        </form>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="card">
+        <h2>📊 Risk Assessment</h2>
+
+        {% if probability is not none %}
+        <div class="meter">
+            <span>{{ probability }}%</span>
+        </div>
+
+        <div class="status
+            {% if result == 'Safe' %}safe
+            {% elif result == 'Medium Risk' %}medium
+            {% else %}high
+            {% endif %}
+        ">
+            Status: {{ result }}
+        </div>
+
+        <div class="loss">
+            💰 Expected Loss:
+            {% if currency == "USD" %}
+                ${{ expected_loss }}
+            {% else %}
+                ₹{{ expected_loss }}
+            {% endif %}
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
